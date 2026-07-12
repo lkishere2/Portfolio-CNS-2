@@ -36,7 +36,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollHandler />
-      <div className="min-h-screen flex flex-col bg-white">
+      <div className="min-h-screen flex flex-col bg-white overflow-x-hidden w-full">
         <Header />
         <VerticalNav />
         <div className="flex-1">
