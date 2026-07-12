@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out forwards;
+  }
+  .animate-slide-in-right {
+    animation: slide-in-right 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .animate-folder-flap-open {
+    animation: folder-flap-open 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  .animate-paper-slide-1 {
+    animation: paper-slide-1 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .animate-paper-slide-2 {
+    animation: paper-slide-2 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes folder-flap-open {
+  0% { transform: translateZ(10px) rotateX(0deg); }
+  100% { transform: translateZ(10px) rotateX(-40deg); }
+}
+
+@keyframes paper-slide-1 {
+  0% { opacity: 0; transform: translate(-50%, 20px) translateZ(-5px); }
+  100% { opacity: 1; transform: translate(-50%, -30px) translateZ(-5px) rotate(-2deg); }
+}
+
+@keyframes paper-slide-2 {
+  0% { opacity: 0; transform: translate(-50%, 20px) translateZ(0px); }
+  100% { opacity: 1; transform: translate(-50%, -15px) translateZ(0px) rotate(3deg); }
+}
