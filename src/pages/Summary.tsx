@@ -10,9 +10,9 @@ export default function Summary() {
             <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-pink-100 to-rose-100 text-pink-700 text-sm font-bold rounded-full uppercase tracking-widest mb-4 shadow-sm border border-pink-200">
               Tổng kết Khóa học
             </span>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
-              Đánh giá bản thân &{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight flex flex-wrap gap-2">
+              <span>Đánh giá bản thân &</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500 whitespace-nowrap">
                 Sự trưởng thành
               </span>
             </h1>

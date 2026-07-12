@@ -19,7 +19,7 @@ export default function Week2() {
     <main className="w-full max-w-7xl mx-auto px-6 md:px-8 py-8 sm:py-12 overflow-hidden space-y-12">
       
       {/* Page Header */}
-      <div className="mb-10 border-b border-pink-100 pb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+      <div className="mb-10 border-b border-pink-100 pb-6 opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '0s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           <div>
             <span className="inline-block px-3 py-1 bg-gradient-to-r from-pink-100 to-rose-100 text-pink-600 text-xs font-bold rounded-full uppercase tracking-widest mb-3 shadow-sm">
@@ -44,11 +44,11 @@ export default function Week2() {
         <SearchBar />
       </div>
 
-      {/* Main Content Layout */}
-      <div className="flex flex-col lg:flex-row gap-10 items-start">
+      {/* Container 1: Report/Goals & SearchingKnowledge */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
         
-        {/* Left Column: Goals & Report */}
-        <div className="w-full lg:w-1/3 flex flex-col gap-10 lg:sticky lg:top-8 z-10 h-fit opacity-0 animate-slide-in-right" style={{ animationDelay: '1.4s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+        {/* Left Column: Report & Goals */}
+        <div className="flex flex-col gap-10 opacity-0 animate-slide-in-right will-change-transform transform-gpu" style={{ animationDelay: '1.4s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
           
           {/* Báo cáo minh chứng */}
           <div>
@@ -66,7 +66,7 @@ export default function Week2() {
           {/* Mục tiêu cốt lõi */}
           <div className="flex flex-col gap-3">
             <h2 className="text-base font-bold text-pink-700 uppercase tracking-wide border-b border-pink-100 pb-2 mb-2">
-              🎯 Mục tiêu cốt lõi
+              Mục tiêu cốt lõi
             </h2>
             <div className="flex flex-col gap-3">
               {goals.map((goal, idx) => (
@@ -77,22 +77,25 @@ export default function Week2() {
           
         </div>
 
-        {/* Right Column: Content */}
-        <div className="w-full lg:w-2/3 space-y-10 opacity-0 animate-fade-in-up" style={{ animationDelay: '1.8s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
-          
-          {/* Knowledge Section 1: Searching */}
-          <section className="space-y-8">
-            <SearchingKnowledge />
-            <AcademicSources />
-          </section>
-
-          {/* Knowledge Section 2: Fact Checking & Evaluation */}
-          <section className="space-y-8">
-            <FactChecking />
-            <SourceEvaluation />
-          </section>
-
+        {/* Right Column: SearchingKnowledge */}
+        <div className="opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '1.6s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+          <SearchingKnowledge />
         </div>
+      </div>
+
+      {/* Container 2: AcademicSources & FactChecking */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start pt-4">
+        <div className="opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '1.8s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+          <AcademicSources />
+        </div>
+        <div className="opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '2.0s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+          <FactChecking />
+        </div>
+      </div>
+
+      {/* Container 3: SourceEvaluation */}
+      <div className="pt-4 opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '2.2s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+        <SourceEvaluation />
       </div>
     </main>
   );

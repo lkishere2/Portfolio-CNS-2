@@ -17,20 +17,21 @@ export default function Week1() {
   return (
     <main className="w-full max-w-7xl mx-auto px-6 md:px-8 py-8 sm:py-12 overflow-hidden space-y-12">
       {/* Page Header */}
-      <div className="border-b border-pink-100 pb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+      <div className="mb-10 border-b border-pink-100 pb-6 opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '0s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-          <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-4 flex-1">
-            <div>
-              <span className="inline-block px-2.5 py-1 bg-pink-100 text-pink-600 text-xs font-bold rounded uppercase tracking-wider mb-2">
-                Week 1 · Nhiệm vụ 1
+          <div>
+            <span className="inline-block px-3 py-1 bg-gradient-to-r from-pink-100 to-rose-100 text-pink-600 text-xs font-bold rounded-full uppercase tracking-widest mb-3 shadow-sm">
+              Week 1 · Nhiệm vụ 1
+            </span>
+            <h1 className="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
+              Hệ điều hành &{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">
+                Kiến trúc
               </span>
-              <h1 className="text-3xl font-bold text-gray-900 tracking-tight">
-                Hệ điều hành & Kiến trúc
-              </h1>
-            </div>
-            <div className="text-sm font-medium text-gray-500 border-l-2 border-pink-200 pl-4 max-w-sm">
+            </h1>
+            <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
               Khám phá cách hệ điều hành quản lý tệp, thư mục và cách xây dựng tư duy lưu trữ dữ liệu khoa học.
-            </div>
+            </p>
           </div>
           <PageNav next={{ path: "/week2", label: "Week 2" }} />
         </div>
@@ -48,7 +49,7 @@ export default function Week1() {
         <div className="w-full lg:w-2/3 flex flex-col gap-10 relative z-0">
 
           {/* File Viewer (Báo cáo minh chứng) - MOVED TO TOP AND ENHANCED */}
-          <div className="opacity-0 animate-slide-in-right transform origin-left" style={{ animationDelay: '1.0s', animationDuration: '1s' }}>
+          <div className="opacity-0 animate-slide-in-right transform origin-left will-change-transform transform-gpu" style={{ animationDelay: '0.2s', animationDuration: '1s' }}>
             <div className="flex items-center gap-2 mb-3">
               <span className="flex h-3 w-3 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
@@ -69,18 +70,18 @@ export default function Week1() {
           
           {/* Goal Items */}
           <div className="flex flex-col gap-3">
-            <h2 className="text-sm font-bold text-pink-700 uppercase tracking-wide border-b border-pink-100 pb-2 mb-2 opacity-0 animate-slide-in-right" style={{ animationDelay: '1.3s', animationDuration: '1s' }}>
+            <h2 className="text-sm font-bold text-pink-700 uppercase tracking-wide border-b border-pink-100 pb-2 mb-2 opacity-0 animate-slide-in-right will-change-transform transform-gpu" style={{ animationDelay: '0.4s', animationDuration: '1s' }}>
               Mục tiêu cốt lõi
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {goals.map((goal, idx) => (
-                <GoalItem key={idx} text={goal} delay={`${1.5 + idx * 0.15}s`} />
+                <GoalItem key={idx} text={goal} delay={`${0.6 + idx * 0.15}s`} />
               ))}
             </div>
           </div>
 
           {/* Core Basic Tasks List */}
-          <div className="opacity-0 animate-slide-in-right" style={{ animationDelay: '1.9s', animationDuration: '1s', animationFillMode: 'forwards' }}>
+          <div className="opacity-0 animate-slide-in-right will-change-transform transform-gpu" style={{ animationDelay: '0.8s', animationDuration: '1s', animationFillMode: 'forwards' }}>
             <BasicTasks />
           </div>
 
@@ -89,11 +90,11 @@ export default function Week1() {
 
       {/* Full-width Section: Concepts & Shortcuts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-        <div className="opacity-0 animate-fade-in-up" style={{ animationDelay: '2.2s', animationDuration: '1s', animationFillMode: 'forwards' }}>
+        <div className="opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '1.0s', animationDuration: '1s', animationFillMode: 'forwards' }}>
           <FileSystemConcepts />
         </div>
 
-        <div className="opacity-0 animate-fade-in-up" style={{ animationDelay: '2.5s', animationDuration: '1s', animationFillMode: 'forwards' }}>
+        <div className="opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '1.2s', animationDuration: '1s', animationFillMode: 'forwards' }}>
           <ShortcutKeys />
         </div>
       </div>

@@ -108,7 +108,7 @@ export default function FileViewer({ filename, label }: FileViewerProps) {
           {/* Iframe Container */}
           <div className="w-full flex-1 relative bg-gray-100 overflow-auto overflow-y-auto !WebkitOverflowScrolling-touch">
             <iframe
-              src={`${filePath}#view=FitH`}
+              src={`${filePath}#zoom=100`}
               className="w-full h-full border-0 absolute top-0 left-0"
               title={label ?? filename}
             />

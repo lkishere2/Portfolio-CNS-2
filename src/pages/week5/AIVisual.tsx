@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { BrainCircuit, Image, Type, Palette } from "lucide-react";
+import { BrainCircuit, Image, Type, Palette, Target } from "lucide-react";
 
 export default function AIVisual() {
   return (
@@ -20,36 +20,73 @@ export default function AIVisual() {
         <BrainCircuit className="w-14 h-14 text-white" />
       </motion.div>
 
-      {/* Orbit Rings */}
-      <div className="absolute w-52 h-52 border-2 border-pink-100 rounded-full border-dashed animate-[spin_20s_linear_infinite]" />
-      <div className="absolute w-72 h-72 border border-pink-50 rounded-full" />
+      {/* Orbit Rings Background */}
+      <div className="absolute w-72 h-72 border border-pink-50 rounded-full z-0" />
 
-      {/* Floating Tool Icons */}
-      {/* Text AI */}
+      {/* Orbiting Container */}
       <motion.div 
-        animate={{ y: [-10, 10, -10] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-2 left-1/2 -translate-x-1/2 w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-500 shadow-sm z-30 backdrop-blur-sm"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        className="absolute w-52 h-52 border-2 border-pink-100 rounded-full border-dashed z-10 will-change-transform transform-gpu"
       >
-        <Type className="w-6 h-6" />
-      </motion.div>
+        {/* Target (Top) - Appears at 0s */}
+        <div className="absolute -top-7 left-1/2 -translate-x-1/2">
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="w-14 h-14 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center text-rose-500 shadow-sm backdrop-blur-sm will-change-transform transform-gpu"
+          >
+            <Target className="w-6 h-6" />
+          </motion.div>
+        </div>
 
-      {/* Image AI */}
-      <motion.div 
-        animate={{ y: [10, -10, 10] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-10 right-2 w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-500 shadow-sm z-30 backdrop-blur-sm"
-      >
-        <Image className="w-6 h-6" />
-      </motion.div>
+        {/* Text AI (Right) - Appears at 1s */}
+        <motion.div 
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+          className="absolute top-1/2 -translate-y-1/2 -right-7"
+        >
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-500 shadow-sm backdrop-blur-sm will-change-transform transform-gpu"
+          >
+            <Type className="w-6 h-6" />
+          </motion.div>
+        </motion.div>
 
-      {/* Design AI */}
-      <motion.div 
-        animate={{ y: [-8, 8, -8] }}
-        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-10 left-2 w-14 h-14 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-500 shadow-sm z-30 backdrop-blur-sm"
-      >
-        <Palette className="w-6 h-6" />
+        {/* Image AI (Bottom) - Appears at 1s */}
+        <motion.div 
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+          className="absolute -bottom-7 left-1/2 -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-500 shadow-sm backdrop-blur-sm will-change-transform transform-gpu"
+          >
+            <Image className="w-6 h-6" />
+          </motion.div>
+        </motion.div>
+
+        {/* Design AI (Left) - Appears at 1s */}
+        <motion.div 
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+          className="absolute top-1/2 -translate-y-1/2 -left-7"
+        >
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="w-14 h-14 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-500 shadow-sm backdrop-blur-sm will-change-transform transform-gpu"
+          >
+            <Palette className="w-6 h-6" />
+          </motion.div>
+        </motion.div>
       </motion.div>
       
     </div>

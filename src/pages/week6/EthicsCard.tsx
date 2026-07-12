@@ -56,8 +56,8 @@ export default function EthicsCard() {
         transition={{ delay: 0.5, duration: 0.5 }}
         className="relative overflow-hidden rounded-3xl bg-gray-900 p-8 shadow-xl mt-auto"
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-pink-500/20 to-rose-500/20 blur-3xl transform translate-x-1/3 -translate-y-1/3" />
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 blur-3xl transform -translate-x-1/3 translate-y-1/3" />
+        <div className="hidden md:block absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-pink-500/20 to-rose-500/20 blur-3xl transform translate-x-1/3 -translate-y-1/3" />
+        <div className="hidden md:block absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 blur-3xl transform -translate-x-1/3 translate-y-1/3" />
         
         <div className="relative z-10 flex flex-col sm:flex-row items-start gap-6">
           <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center shrink-0 shadow-lg">

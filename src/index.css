@@ -51,3 +51,28 @@ html, body {
   0% { opacity: 0; transform: translate(-50%, 20px) translateZ(0px); }
   100% { opacity: 1; transform: translate(-50%, -15px) translateZ(0px) rotate(3deg); }
 }
+
+@keyframes falling-right {
+  0% { transform: translate(0, -10vh); }
+  100% { transform: translate(100vw, 120vh); }
+}
+
+@keyframes falling-left {
+  0% { transform: translate(0, -10vh); }
+  100% { transform: translate(-70vw, 120vh); }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-25deg) translateX(0); }
+  50% { transform: rotate(25deg) translateX(20px); }
+}
+
+.animate-falling-right {
+  animation: falling-right linear infinite;
+}
+.animate-falling-left {
+  animation: falling-left linear infinite;
+}
+.animate-sway {
+  animation: sway 3s ease-in-out infinite;
+}

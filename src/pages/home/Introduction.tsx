@@ -1,6 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import CherryBlossoms from "../../components/CherryBlossoms";
 
 export default function Introduction() {
   const location = useLocation();
@@ -49,6 +50,9 @@ export default function Introduction() {
   return (
     <section className="relative overflow-hidden py-24 px-6 min-h-screen flex flex-col justify-center bg-gradient-to-b from-pink-50/80 to-pink-100/50">
       
+      {/* 🌸 Cherry Blossoms Effect */}
+      <CherryBlossoms />
+
       {/* 🎭 CURTAIN EFFECT - ONLY SHOW IF NOT PLAYED */}
       {!hasPlayedIntro && (
         <>
@@ -69,22 +73,22 @@ export default function Introduction() {
         </>
       )}
 
-      {/* Background blobs */}
+      {/* Decorative blobs */}
       <motion.div 
         animate={{ 
-          scale: [1, 1.1, 1],
+          scale: [1, 1.05, 1],
           rotate: [0, 90, 0] 
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="absolute -top-20 -right-20 w-96 h-96 bg-pink-200/50 rounded-full blur-3xl pointer-events-none" 
+        className="hidden md:block absolute -top-20 -right-20 w-96 h-96 bg-pink-200/50 rounded-full blur-3xl pointer-events-none will-change-transform transform-gpu" 
       />
       <motion.div 
         animate={{ 
-          scale: [1, 1.2, 1],
+          scale: [1, 1.1, 1],
           rotate: [0, -90, 0] 
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        className="absolute -bottom-20 -left-20 w-72 h-72 bg-rose-200/40 rounded-full blur-3xl pointer-events-none" 
+        className="hidden md:block absolute -bottom-20 -left-20 w-72 h-72 bg-rose-200/40 rounded-full blur-3xl pointer-events-none will-change-transform transform-gpu" 
       />
 
       <motion.div 

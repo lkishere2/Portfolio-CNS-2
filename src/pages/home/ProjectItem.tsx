@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export interface ProjectData {
-  week: number;
+  week: number | string;
   path: string;
   title: string;
   subject: string;
@@ -32,7 +32,7 @@ export default function ProjectItem({ project, isLast }: { project: ProjectData,
       >
         <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center font-bold text-sm md:text-base shadow-sm border-4 border-white ${project.badge} relative`}>
           <span className="absolute inset-0 rounded-full animate-ping opacity-20 bg-pink-400"></span>
-          W{project.week}
+          {typeof project.week === 'number' ? `W${project.week}` : project.week}
         </div>
       </motion.div>
 

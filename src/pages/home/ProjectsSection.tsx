@@ -79,6 +79,19 @@ const projects: ProjectData[] = [
     border: "border-pink-200",
     badge: "bg-pink-100 text-pink-600",
   },
+  {
+    week: "★",
+    path: "/summary",
+    title: "Tổng kết khóa học",
+    subject: "Hành trình nhìn lại",
+    description:
+      "Nhìn lại chặng đường 6 tuần với những bài học cốt lõi, kỹ năng thực chiến đã thu nhận được và định hướng ứng dụng trong tương lai.",
+    tags: ["Tổng kết", "Phản ngẫm", "Định hướng"],
+    color: "from-pink-500 to-rose-500",
+    bg: "bg-pink-50",
+    border: "border-pink-200",
+    badge: "bg-pink-100 text-pink-700",
+  },
 ];
 
 export default function ProjectsSection() {

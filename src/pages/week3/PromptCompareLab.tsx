@@ -32,7 +32,7 @@ export default function PromptCompareLab() {
             onClick={() => setActiveLevel(level.id as 1|2|3|4)}
             className={`flex-1 py-2.5 text-sm sm:text-base font-bold rounded-lg z-10 transition-colors ${
               activeLevel === level.id 
-                ? (level.id === 4 ? "text-pink-700" : "text-gray-800") 
+                ? "text-purple-700"
                 : "text-gray-500 hover:text-gray-700"
             }`}
           >
@@ -66,29 +66,29 @@ export default function PromptCompareLab() {
             >
               <div className="flex flex-col gap-2 items-end">
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mr-2">Câu lệnh (Ngây ngô)</span>
-                <div className="bg-gray-500 text-white p-4 rounded-2xl rounded-tr-sm shadow-sm text-base">
+                <div className="bg-red-500 text-white p-4 rounded-2xl rounded-tr-sm shadow-sm text-base">
                   "Tạo đề thi IELTS Writing."
                 </div>
               </div>
 
               <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
-                  <Bot className="w-4 h-4 text-gray-500" />
+                <div className="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center shrink-0">
+                  <Bot className="w-4 h-4 text-purple-500" />
                 </div>
                 <div className="flex-1">
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1 mb-1 block">AI Phản hồi</span>
-                  <div className="bg-gray-100 text-gray-800 p-4 rounded-2xl rounded-tl-sm text-base border border-gray-200">
+                  <div className="bg-white border border-gray-200 shadow-sm text-gray-800 p-4 rounded-2xl rounded-tl-sm text-base">
                     <p>Dưới đây là một đề thi IELTS Writing Task 2:</p>
                     <p className="mt-2 font-medium">Some people think that children should learn to play a musical instrument. To what extent do you agree or disagree?</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 bg-rose-50 border border-rose-100 p-4 rounded-xl">
-                <h4 className="font-bold text-rose-700 text-base flex items-center gap-2 mb-2">
+              <div className="mt-6 bg-red-50 border border-red-100 p-4 rounded-xl">
+                <h4 className="font-bold text-red-700 text-base flex items-center gap-2 mb-2">
                   <AlertCircle className="w-4 h-4" /> Đánh giá Level 1 (Kém)
                 </h4>
-                <ul className="text-sm md:text-base text-rose-900/80 space-y-1 list-disc list-inside">
+                <ul className="text-sm md:text-base text-red-900/80 space-y-1 list-disc list-inside">
                   <li><strong>Lỗi cơ chế:</strong> Chỉ có 1 phiên bản prompt duy nhất. Không ngữ cảnh.</li>
                   <li><strong>Tác hại:</strong> AI tự biên tự diễn, trả về kết quả ngẫu nhiên.</li>
                 </ul>
@@ -108,18 +108,18 @@ export default function PromptCompareLab() {
             >
               <div className="flex flex-col gap-2 items-end">
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mr-2">Câu lệnh (Cải tiến nhẹ)</span>
-                <div className="bg-blue-500 text-white p-4 rounded-2xl rounded-tr-sm shadow-sm text-base">
+                <div className="bg-amber-500 text-white p-4 rounded-2xl rounded-tr-sm shadow-sm text-base">
                   "Tạo 1 đề thi IELTS Writing Task 2 về chủ đề Giáo dục cho người học."
                 </div>
               </div>
 
               <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-                  <Bot className="w-4 h-4 text-blue-500" />
+                <div className="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center shrink-0">
+                  <Bot className="w-4 h-4 text-purple-500" />
                 </div>
                 <div className="flex-1">
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1 mb-1 block">AI Phản hồi</span>
-                  <div className="bg-blue-50/50 text-gray-700 p-4 rounded-2xl rounded-tl-sm text-base border border-blue-100">
+                  <div className="bg-white border border-gray-200 shadow-sm text-gray-700 p-4 rounded-2xl rounded-tl-sm text-base">
                     <p>Chủ đề: Giáo dục</p>
                     <p className="mt-2 font-medium">"University education should be free to everyone. To what extent do you agree or disagree?"</p>
                     <p className="mt-2 italic text-gray-500">Hãy viết bài luận 250 từ thể hiện quan điểm của bạn.</p>
@@ -151,20 +151,20 @@ export default function PromptCompareLab() {
             >
               <div className="flex flex-col gap-2 items-end">
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mr-2">Câu lệnh (Nâng cao)</span>
-                <div className="bg-indigo-500 text-white p-4 rounded-2xl rounded-tr-sm shadow-sm text-base">
+                <div className="bg-blue-500 text-white p-4 rounded-2xl rounded-tr-sm shadow-sm text-base">
                   "Đóng vai giám khảo IELTS. Tạo 1 đề thi Writing Task 2 chủ đề Giáo dục. Dành cho học viên đang ở band 6.0."
                 </div>
               </div>
 
               <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center shrink-0">
-                  <Bot className="w-4 h-4 text-indigo-500" />
+                <div className="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center shrink-0">
+                  <Bot className="w-4 h-4 text-purple-500" />
                 </div>
                 <div className="flex-1">
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1 mb-1 block">AI Phản hồi</span>
-                  <div className="bg-indigo-50/50 text-gray-700 p-4 rounded-2xl rounded-tl-sm text-base border border-indigo-100">
+                  <div className="bg-white border border-gray-200 shadow-sm text-gray-700 p-4 rounded-2xl rounded-tl-sm text-base">
                     <p>Chào bạn, với tư cách là giám khảo, tôi gợi ý đề bài sau cho học viên band 6.0:</p>
-                    <p className="mt-2 font-medium bg-white p-2 rounded">"Many students find it difficult to concentrate in modern classrooms. What are the causes of this and what solutions can you suggest?"</p>
+                    <p className="mt-2 font-medium bg-gray-50 p-2 rounded">"Many students find it difficult to concentrate in modern classrooms. What are the causes of this and what solutions can you suggest?"</p>
                     <p className="mt-2 text-sm text-gray-600">Lời khuyên: Ở band 6.0, hãy tập trung vào việc phát triển ý tưởng rõ ràng và sử dụng câu phức đa dạng.</p>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ export default function PromptCompareLab() {
             >
               <div className="flex flex-col gap-2 items-end">
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mr-2">Câu lệnh (Chuyên gia)</span>
-                <div className="bg-gradient-to-r from-pink-500 to-rose-500 text-white p-4 rounded-2xl rounded-tr-sm max-w-[95%] shadow-md text-base leading-relaxed">
+                <div className="bg-green-500 text-white p-4 rounded-2xl rounded-tr-sm max-w-[95%] shadow-md text-base leading-relaxed">
                   <span className="bg-white/20 px-1 rounded font-bold mr-1">[Vai trò]</span> 
                   Đóng vai giám khảo IELTS. <br/>
                   <span className="bg-white/20 px-1 rounded font-bold mr-1 mt-2 inline-block">[Nhiệm vụ]</span> 
@@ -207,16 +207,16 @@ export default function PromptCompareLab() {
               </div>
 
               <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center shrink-0">
-                  <Bot className="w-4 h-4 text-pink-600" />
+                <div className="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center shrink-0">
+                  <Bot className="w-4 h-4 text-purple-600" />
                 </div>
                 <div className="flex-1">
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1 mb-1 block">AI Phản hồi (Xuất sắc)</span>
-                  <div className="bg-white border-2 border-pink-100 text-gray-700 p-4 rounded-2xl rounded-tl-sm text-base shadow-sm space-y-3">
+                  <div className="bg-white border border-gray-200 text-gray-700 p-4 rounded-2xl rounded-tl-sm text-base shadow-sm space-y-3">
                     <p className="font-bold text-gray-900">📝 Đề bài (Chủ đề: Giáo dục đại học):</p>
                     <p className="italic bg-gray-50 p-2 rounded text-gray-800">"University education should be free to everyone... To what extent do you agree?"</p>
                     
-                    <p className="font-bold text-pink-600 mt-2">✨ Từ vựng Band 7+ (Lexical Resource):</p>
+                    <p className="font-bold text-purple-600 mt-2">✨ Từ vựng Band 7+ (Lexical Resource):</p>
                     <ul className="list-disc list-inside text-gray-600">
                       <li><strong>Financial burden</strong> (Gánh nặng tài chính)</li>
                       <li><strong>Socioeconomic background</strong> (Hoàn cảnh KT-XH)</li>
@@ -229,11 +229,11 @@ export default function PromptCompareLab() {
                 </div>
               </div>
 
-              <div className="mt-4 bg-emerald-50 border border-emerald-100 p-4 rounded-xl">
-                <h4 className="font-bold text-emerald-700 text-base flex items-center gap-2 mb-2">
+              <div className="mt-4 bg-green-50 border border-green-100 p-4 rounded-xl">
+                <h4 className="font-bold text-green-700 text-base flex items-center gap-2 mb-2">
                   <CheckCircle2 className="w-4 h-4" /> Đánh giá Level 4 (Tuyệt Đối)
                 </h4>
-                <ul className="text-sm text-emerald-900/80 space-y-1.5 list-disc list-inside">
+                <ul className="text-sm text-green-900/80 space-y-1.5 list-disc list-inside">
                   <li><strong>Áp dụng thành thạo:</strong> Sử dụng RTF & CREATE một cách hoàn hảo.</li>
                   <li><strong>Cơ chế hoạt động của AI:</strong> Khi có <code>[Vai trò]</code> và <code>[Bối cảnh]</code> cụ thể, mô hình xác suất của AI tự động lọc bỏ các từ vựng B1/B2 và chọn lọc đúng từ vựng C1.</li>
                   <li><strong>Kiểm soát ảo giác:</strong> <code>[Ràng buộc]</code> ép AI giới hạn chính xác lượng thông tin đầu ra, đáp ứng đúng yêu cầu của người học.</li>

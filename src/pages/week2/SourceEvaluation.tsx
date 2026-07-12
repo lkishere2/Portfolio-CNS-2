@@ -18,9 +18,9 @@ export default function SourceEvaluation() {
       type: "Bài báo khoa học",
       pros: "Nghiên cứu định lượng, đo lường BLEU score",
       cons: "Nặng về kỹ thuật, ít tính văn hóa",
-      color: "from-rose-400 to-pink-500",
-      bg: "bg-pink-50",
-      border: "border-pink-100"
+      color: "from-blue-500 to-indigo-500",
+      bg: "bg-blue-50",
+      border: "border-blue-100"
     },
     {
       title: "Standard for Translation Services",
@@ -28,9 +28,9 @@ export default function SourceEvaluation() {
       type: "Tiêu chuẩn ngành",
       pros: "Luật chơi chung, tính ứng dụng thực tế cao",
       cons: "Khô khan, thiếu tính linh hoạt",
-      color: "from-emerald-400 to-teal-500",
-      bg: "bg-teal-50",
-      border: "border-teal-100"
+      color: "from-blue-500 to-indigo-500",
+      bg: "bg-blue-50",
+      border: "border-blue-100"
     }
   ];
 

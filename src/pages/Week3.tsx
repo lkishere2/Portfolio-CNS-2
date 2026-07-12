@@ -17,7 +17,7 @@ export default function Week3() {
     <main className="w-full max-w-7xl mx-auto px-6 md:px-8 py-8 sm:py-12 overflow-hidden space-y-12">
       
       {/* Page Header */}
-      <div className="mb-10 border-b border-pink-100 pb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+      <div className="mb-10 border-b border-pink-100 pb-6 opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '0s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           <div>
             <span className="inline-block px-3 py-1 bg-gradient-to-r from-pink-100 to-rose-100 text-pink-600 text-xs font-bold rounded-full uppercase tracking-widest mb-3 shadow-sm">
@@ -40,14 +40,21 @@ export default function Week3() {
       {/* Main Content Layout */}
       <div className="flex flex-col lg:flex-row gap-10 items-start">
         
-        {/* Left Column: Goals & Report */}
-        <div className="w-full lg:w-1/3 flex flex-col gap-10 lg:sticky lg:top-8 z-10 h-fit opacity-0 animate-slide-in-right" style={{ animationDelay: '0.4s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+        {/* Left Column: Content */}
+        <div className="w-full lg:w-2/3 flex flex-col gap-10 relative z-0 order-2 lg:order-1">
           
-          {/* Báo cáo minh chứng */}
-          <div>
-            <h2 className="text-sm font-bold text-gray-700 uppercase tracking-wide mb-3 px-1 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span> Báo cáo nộp bài
-            </h2>
+          {/* File Viewer (Báo cáo minh chứng) */}
+          <div className="opacity-0 animate-slide-in-right transform origin-left will-change-transform transform-gpu" style={{ animationDelay: '0.2s', animationDuration: '1s', animationFillMode: 'forwards' }}>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="flex h-3 w-3 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+              </span>
+              <h2 className="text-sm font-bold text-red-700 uppercase tracking-widest px-1">
+                Báo cáo nộp bài
+              </h2>
+            </div>
+            {/* Wrapper to scale it up slightly to make it bigger and more prominent */}
             <div className="scale-[1.02] transform-gpu transition-transform hover:scale-[1.03]">
               <FileViewer
                 filename="week3.pdf"
@@ -58,51 +65,50 @@ export default function Week3() {
 
           {/* Mục tiêu cốt lõi */}
           <div className="flex flex-col gap-3">
-            <h2 className="text-base font-bold text-pink-700 uppercase tracking-wide border-b border-pink-100 pb-2 mb-2">
-              🎯 Mục tiêu cốt lõi
+            <h2 className="text-sm font-bold text-red-700 uppercase tracking-wide border-b border-red-100 pb-2 mb-2 opacity-0 animate-slide-in-right will-change-transform transform-gpu" style={{ animationDelay: '0.4s', animationDuration: '1s', animationFillMode: 'forwards' }}>
+              Mục tiêu cốt lõi
             </h2>
-            <div className="flex flex-col gap-3">
+            <div className="grid sm:grid-cols-2 gap-4">
               {goals.map((goal, idx) => (
-                <GoalItem key={idx} text={goal} delay={`${0.4 + idx * 0.15}s`} />
+                <GoalItem key={idx} text={goal} delay={`${0.6 + idx * 0.15}s`} />
               ))}
             </div>
           </div>
-          
+
         </div>
 
-        {/* Right Column: Content */}
-        <div className="w-full lg:w-2/3 space-y-10 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.8s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
-          
-          {/* Laptop Animation Hero */}
-          <div className="w-full bg-gray-50/50 border border-gray-100 rounded-3xl p-6 md:p-10 flex justify-center shadow-sm">
-            <div className="transform-gpu scale-[0.85] sm:scale-100 origin-center transition-transform duration-500">
-              <Laptop />
-            </div>
+        {/* Right Column: Graphic */}
+        <div className="w-full lg:w-1/3 flex justify-center lg:sticky lg:top-8 z-10 h-fit order-1 lg:order-2">
+          <div className="transform-gpu scale-[0.85] sm:scale-100 origin-top transition-transform duration-500">
+            <Laptop />
           </div>
-          
-          {/* Kiến thức */}
-          <section className="space-y-8 pt-4">
-            <div className="flex items-center gap-3">
-              <h2 className="text-2xl font-bold text-gray-800 border-l-4 border-blue-500 pl-4">
-                Kiến thức nền tảng
-              </h2>
-            </div>
-            <PromptKnowledge />
-          </section>
-
-          {/* Áp dụng (Thực hành so sánh) */}
-          <section className="space-y-8 pt-4">
-            <div className="flex items-center gap-3">
-              <h2 className="text-2xl font-bold text-gray-800 border-l-4 border-purple-500 pl-4">
-                Áp dụng & Đánh giá
-              </h2>
-            </div>
-            <div className="w-full">
-              <PromptCompareLab />
-            </div>
-          </section>
-
         </div>
+
+      </div>
+
+      {/* Full-width Section: Knowledge & Practice vertically stacked */}
+      <div className="flex flex-col gap-12 pt-8 pb-12">
+        {/* Kiến thức nền tảng (Green) */}
+        <section className="space-y-6 opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '0.8s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+          <div className="flex items-center gap-3">
+            <h2 className="text-2xl font-bold text-gray-800 border-l-4 border-green-500 pl-4">
+              Kiến thức nền tảng
+            </h2>
+          </div>
+          <PromptKnowledge />
+        </section>
+
+        {/* Áp dụng (Thực hành so sánh) (Purple) */}
+        <section className="space-y-6 opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '1.0s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+          <div className="flex items-center gap-3">
+            <h2 className="text-2xl font-bold text-gray-800 border-l-4 border-purple-500 pl-4">
+              Áp dụng thực tế
+            </h2>
+          </div>
+          <div className="w-full">
+            <PromptCompareLab />
+          </div>
+        </section>
       </div>
     </main>
   );

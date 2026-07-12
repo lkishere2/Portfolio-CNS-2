@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FolderTree, Search, MessageSquare, Users, Palette, Bot, Target, FolderOpen } from "lucide-react";
+import ObjectiveCard from "../../components/ObjectiveCard";
 
 export default function AboutMe() {
   const tags = [
@@ -14,10 +15,10 @@ export default function AboutMe() {
   return (
     <section id="about" className="py-20 px-6 bg-white relative">
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
           
           {/* Cột trái: Giới thiệu và Kỹ năng */}
-          <div className="text-left">
+          <div className="text-left flex flex-col justify-center">
             <p className="text-sm font-medium text-pink-400 uppercase tracking-widest mb-2">
               Về bản thân
             </p>
@@ -48,45 +49,21 @@ export default function AboutMe() {
           </div>
 
           {/* Cột phải: Các mục tiêu */}
-          <div className="flex flex-col gap-6 relative">
+          <div className="grid grid-rows-2 gap-6 relative h-full">
             {/* Background trang trí nhỏ phía sau cards */}
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-pink-100 rounded-full blur-3xl opacity-50 pointer-events-none" />
+            <div className="hidden md:block absolute -top-10 -right-10 w-64 h-64 bg-pink-100 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
-            <motion.div 
-              whileHover={{ x: -5, boxShadow: "0 10px 25px -5px rgba(236, 72, 153, 0.1), 0 8px 10px -6px rgba(236, 72, 153, 0.1)" }}
-              className="bg-gradient-to-br from-white to-pink-50/50 border border-pink-100 rounded-3xl p-8 shadow-sm transition-all duration-300 relative z-10"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 shrink-0">
-                  <Target className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-800">
-                  Mục tiêu học tập
-                </h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed pl-16">
-                Hiểu và ứng dụng được các công nghệ số cơ bản, từ quản lý tệp
-                tin đến khai thác AI tạo sinh trong học tập và nghiên cứu ngôn ngữ.
-              </p>
-            </motion.div>
+            <ObjectiveCard
+              icon={<Target className="w-6 h-6" />}
+              title="Mục tiêu học tập"
+              description="Hiểu và ứng dụng được các công nghệ số cơ bản, từ quản lý tệp tin đến khai thác AI tạo sinh trong học tập và nghiên cứu ngôn ngữ."
+            />
 
-            <motion.div 
-              whileHover={{ x: -5, boxShadow: "0 10px 25px -5px rgba(236, 72, 153, 0.1), 0 8px 10px -6px rgba(236, 72, 153, 0.1)" }}
-              className="bg-gradient-to-br from-white to-pink-50/50 border border-pink-100 rounded-3xl p-8 shadow-sm transition-all duration-300 relative z-10 lg:ml-8"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 shrink-0">
-                  <FolderOpen className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-800">
-                  Mục tiêu Portfolio
-                </h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed pl-16">
-                Lưu trữ và trình bày các sản phẩm học tập một cách có hệ thống,
-                thể hiện sự phát triển kỹ năng số qua từng tuần học.
-              </p>
-            </motion.div>
+            <ObjectiveCard
+              icon={<FolderOpen className="w-6 h-6" />}
+              title="Mục tiêu Portfolio"
+              description="Lưu trữ và trình bày các sản phẩm học tập một cách có hệ thống, thể hiện sự phát triển kỹ năng số qua từng tuần học."
+            />
           </div>
 
         </div>

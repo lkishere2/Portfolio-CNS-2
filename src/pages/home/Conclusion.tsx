@@ -45,8 +45,8 @@ export default function Conclusion() {
   return (
     <section id="conclusion" className="py-24 px-6 bg-white relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] rounded-full bg-pink-50/50 blur-3xl" />
-        <div className="absolute -bottom-[20%] -left-[10%] w-[500px] h-[500px] rounded-full bg-rose-50/50 blur-3xl" />
+        <div className="hidden md:block absolute -top-[20%] -right-[10%] w-[500px] h-[500px] rounded-full bg-pink-50/50 blur-3xl" />
+        <div className="hidden md:block absolute -bottom-[20%] -left-[10%] w-[500px] h-[500px] rounded-full bg-rose-50/50 blur-3xl" />
       </div>
 
       <div className="max-w-5xl mx-auto relative z-10">
