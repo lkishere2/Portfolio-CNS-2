@@ -41,10 +41,9 @@ export default function FileViewer({ filename, label }: FileViewerProps) {
               </svg>
             </div>
             <div>
-              <p className="text-base font-bold text-pink-950 leading-tight mb-1">
+              <p className="text-base font-bold text-pink-950 leading-tight">
                 {label ?? filename}
               </p>
-              <p className="text-sm text-pink-600/70 font-medium">{filename}</p>
             </div>
           </div>
 

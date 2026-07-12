@@ -1,75 +1,46 @@
-# React + TypeScript + Vite
+# Digital Skills & AI Applications Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautifully crafted interactive web portfolio showcasing the journey, learnings, and projects from a 6-week intensive course on "Digital Skills and AI Applications."
 
-Currently, two official plugins are available:
+Built with modern web technologies, this portfolio features smooth animations, dynamic responsive layouts, glassmorphism aesthetics, and custom SVG visual components to illustrate complex technical concepts intuitively.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Technologies Used
+- **Framework:** React 19 + TypeScript + Vite
+- **Styling:** Tailwind CSS (Utility-first CSS)
+- **Animations:** Framer Motion (Orchestrated entrance, hover, and loop animations)
+- **Icons:** Lucide React
+- **Routing:** React Router DOM (v7)
 
-## React Compiler
+## 📁 Project Structure
+The portfolio is divided into a Home page, a Summary page, and 6 weekly mission pages, each highlighting specific AI and digital skills:
+- **Week 1:** File Organization & System Navigation
+- **Week 2:** Advanced Search & Source Evaluation
+- **Week 3:** Prompt Engineering (CREATE framework)
+- **Week 4:** Remote Collaboration & Workflow Automation 
+- **Week 5:** Generative AI for Content & Design
+- **Week 6:** Responsible AI, Data Analytics & Security
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 💻 How to Install and Run Locally
 
-## Expanding the ESLint configuration
+1. **Prerequisites:** Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Install Dependencies:**
+   Open your terminal in the root directory of this project and run:
+   ```bash
+   npm install
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+3. **Start the Development Server:**
+   ```bash
+   npm run dev
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+4. **View in Browser:**
+   Open [http://localhost:5173](http://localhost:5173) in your browser to see the application running. 
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+## 🏗️ Building for Production
+To build the app for production (e.g., to deploy on Vercel, Netlify, or GitHub Pages), run:
+```bash
+npm run build
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+This will compile the TypeScript code and generate optimized static files in the `dist` folder.

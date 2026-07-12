@@ -6,7 +6,7 @@ export default function CollaborationVisual() {
     <div className="relative w-full aspect-[2/1] max-w-[800px] mx-auto flex items-center justify-center opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
       
       {/* Background Glow */}
-      <div className="absolute inset-0 bg-pink-50/50 rounded-[100px] blur-3xl" />
+      <div className="absolute inset-0 bg-pink-50/50 rounded-[100px] blur-3xl hidden md:block" />
 
       {/* Connecting Lines (SVG) */}
       <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none" viewBox="0 0 800 400">
@@ -30,12 +30,9 @@ export default function CollaborationVisual() {
       {/* Central Hub (Document/Project) */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
         <motion.div 
-          animate={{ 
-            scale: [1, 1.05, 1], 
-            boxShadow: ["0px 0px 0px rgba(236,72,153,0)", "0px 0px 40px rgba(236,72,153,0.4)", "0px 0px 0px rgba(236,72,153,0)"] 
-          }}
+          animate={{ scale: [1, 1.05, 1] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="w-20 h-20 sm:w-32 sm:h-32 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center relative shadow-2xl"
+          className="w-20 h-20 sm:w-32 sm:h-32 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center relative shadow-xl"
         >
           <Database className="w-10 h-10 sm:w-16 sm:h-16 text-white" />
         </motion.div>
