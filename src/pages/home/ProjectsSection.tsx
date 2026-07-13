@@ -5,9 +5,9 @@ const projects: ProjectData[] = [
     week: 1,
     path: "/week1",
     title: "Thao tác cơ bản với tệp tin và thư mục",
-    subject: "Bài tập 1 · Mục 1.4",
+    subject: "Bài tập 1 - Mục 1.1",
     description:
-      "Thực hành tạo, đổi tên, sao chép, di chuyển và xóa tệp tin/thư mục trên Windows. Xây dựng cấu trúc thư mục tối ưu và quy tắc đặt tên nhất quán.",
+      "Trình bày cấu trúc thư mục tối ưu và quy tắc đặt tên tệp đã thiết lập, kèm ảnh chụp minh họa.",
     tags: ["File Explorer", "Windows", "Tổ chức tệp"],
     color: "from-pink-400 to-rose-400",
     bg: "bg-pink-50",
@@ -18,9 +18,9 @@ const projects: ProjectData[] = [
     week: 2,
     path: "/week2",
     title: "Tìm kiếm và đánh giá thông tin học thuật",
-    subject: "Bài tập 2 · Mục 2.4",
+    subject: "Bài tập 2 - Mục 2.2",
     description:
-      "Ứng dụng các toán tử tìm kiếm nâng cao (site:, filetype:, AND/NOT) trên Google Scholar. Đánh giá độ tin cậy của nguồn học thuật.",
+      "Trình bày kết quả tìm kiếm học thuật bằng các toán tử nâng cao và bảng đánh giá nguồn tin đã thực hiện.",
     tags: ["Google Scholar", "Toán tử tìm kiếm", "Đánh giá nguồn"],
     color: "from-rose-400 to-pink-500",
     bg: "bg-rose-50",
@@ -31,9 +31,9 @@ const projects: ProjectData[] = [
     week: 3,
     path: "/week3",
     title: "Viết Prompt hiệu quả cho các tác vụ học tập",
-    subject: "Bài tập 2 · Mục 3.4",
+    subject: "Bài tập 2 - Mục 3.2",
     description:
-      "So sánh Prompt cơ bản và Prompt cải tiến trên 3 tác vụ học thuật. Phân tích kỹ thuật Role-prompting, Chain-of-Thought và Few-shot learning.",
+      "Trình bày sự so sánh giữa Prompt ban đầu và Prompt cải tiến cùng kết quả đầu ra từ AI.",
     tags: ["Prompt Engineering", "ChatGPT", "Claude"],
     color: "from-fuchsia-400 to-pink-400",
     bg: "bg-fuchsia-50",
@@ -43,10 +43,10 @@ const projects: ProjectData[] = [
   {
     week: 4,
     path: "/week4",
-    title: "Sử dụng công cụ hợp tác trực tuyến",
-    subject: "Bài tập 3 · Mục 4.4",
+    title: "Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm",
+    subject: "Bài tập 3 - Mục 4.3",
     description:
-      "Trình bày minh chứng sử dụng Trello, Google Docs, Google Drive và Messenger trong dự án nhóm về an toàn giao thông.",
+      "Trình bày minh chứng về việc sử dụng công cụ quản lý dự án nhóm và cách thức phối hợp trực tuyến.",
     tags: ["Trello", "Google Docs", "Messenger"],
     color: "from-pink-500 to-fuchsia-400",
     bg: "bg-pink-50",
@@ -56,10 +56,10 @@ const projects: ProjectData[] = [
   {
     week: 5,
     path: "/week5",
-    title: "Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung số",
-    subject: "Bài tập 2 · Mục 5.4",
+    title: "Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung",
+    subject: "Bài tập 2 - Mục 5.2",
     description:
-      "Sáng tạo E-Magazine và Infographic về sự tiến hóa của tiếng lóng tiếng Anh, sử dụng Gemini, Dreamina AI và Canva Magic Studio.",
+      "Trưng bày sản phẩm nội dung số hoàn thiện (hình ảnh, video hoặc bài viết) được hỗ trợ bởi AI.",
     tags: ["Gemini", "Dreamina", "Canva AI"],
     color: "from-rose-300 to-pink-400",
     bg: "bg-rose-50",
@@ -69,10 +69,10 @@ const projects: ProjectData[] = [
   {
     week: 6,
     path: "/week6",
-    title: "Sử dụng AI có trách nhiệm trong học thuật",
-    subject: "Bài tập 4 · Mục 6.4",
+    title: "Sử dụng AI có trách nhiệm trong học tập và nghiên cứu",
+    subject: "Bài tập 4 - Mục 6.4",
     description:
-      "Nghiên cứu chính sách AI của ULIS-VNU, phân tích đạo đức và xây dựng bộ 7 nguyên tắc cá nhân về sử dụng AI có trách nhiệm.",
+      "Trình bày bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm dựa trên các nghiên cứu đã thực hiện.",
     tags: ["AI Ethics", "Chính sách ULIS", "Liêm chính học thuật"],
     color: "from-pink-400 to-rose-300",
     bg: "bg-pink-50",
@@ -102,13 +102,13 @@ export default function ProjectsSection() {
         {/* Heading */}
         <div className="text-center mb-16">
           <p className="text-sm font-medium text-pink-400 uppercase tracking-widest mb-2">
-            Các bài tập thành phần
-          </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
             Hành trình · 6 Kỹ năng số
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 leading-tight">
+            Bước 2: Hệ thống hóa và trình bày các kết quả bài tập thành phần
           </h2>
-          <p className="text-gray-400 text-sm mt-3 max-w-xl mx-auto">
-            Khám phá hành trình thực hành và phát triển kỹ năng qua từng tuần.
+          <p className="text-gray-500 text-sm md:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
+            Thay vì chỉ thực hiện mới, sinh viên tập trung vào việc biên tập và trình bày lại kết quả của các bài tập nhỏ từ Bài 1 đến Bài 6 vào các trang tương ứng trên Portfolio. Mục tiêu là làm nổi bật sản phẩm cuối cùng và quy trình thực hiện của từng kỹ năng:
           </p>
         </div>
 

@@ -63,7 +63,7 @@ export default function Week1() {
             <div className="scale-[1.02] transform-gpu transition-transform hover:scale-[1.03]">
               <FileViewer
                 filename="week1.pdf"
-                label="Minh chứng các bước thao tác thực hành"
+                label="Báo cáo tuần 1 - Thao tác cơ bản với tệp tin và thư mục"
               />
             </div>
           </div>

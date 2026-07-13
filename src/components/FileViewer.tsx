@@ -9,7 +9,6 @@ interface FileViewerProps {
 export default function FileViewer({ filename, label }: FileViewerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const filePath = `/data/${filename}`;
-  const isWeek1 = filename.includes("week1");
 
   useEffect(() => {
     if (isOpen) {
@@ -23,11 +22,7 @@ export default function FileViewer({ filename, label }: FileViewerProps) {
   }, [isOpen]);
 
   const handleOpen = () => {
-    if (isWeek1) {
-      alert("Tài liệu tuần 1 hiện chưa có trong dữ liệu.");
-    } else {
-      setIsOpen(true);
-    }
+    setIsOpen(true);
   };
 
   return (
