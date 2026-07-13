@@ -48,7 +48,7 @@ export default function Week2() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
         
         {/* Left Column: Report & Goals */}
-        <div className="flex flex-col gap-10 opacity-0 animate-slide-in-right will-change-transform transform-gpu" style={{ animationDelay: '1.4s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+        <div className="flex flex-col gap-10 opacity-0 animate-slide-in-right will-change-transform transform-gpu" style={{ animationDelay: '0.4s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
           
           {/* Báo cáo minh chứng */}
           <div>
@@ -70,7 +70,7 @@ export default function Week2() {
             </h2>
             <div className="flex flex-col gap-3">
               {goals.map((goal, idx) => (
-                <GoalItem key={idx} text={goal} delay={`${1.4 + idx * 0.15}s`} />
+                <GoalItem key={idx} text={goal} delay={`${0.4 + idx * 0.15}s`} />
               ))}
             </div>
           </div>
@@ -78,23 +78,23 @@ export default function Week2() {
         </div>
 
         {/* Right Column: SearchingKnowledge */}
-        <div className="opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '1.6s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+        <div className="opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '0.6s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
           <SearchingKnowledge />
         </div>
       </div>
 
       {/* Container 2: AcademicSources & FactChecking */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start pt-4">
-        <div className="opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '1.8s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+        <div className="opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '0.8s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
           <AcademicSources />
         </div>
-        <div className="opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '2.0s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+        <div className="opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '1.0s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
           <FactChecking />
         </div>
       </div>
 
       {/* Container 3: SourceEvaluation */}
-      <div className="pt-4 opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '2.2s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+      <div className="pt-4 opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '1.2s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
         <SourceEvaluation />
       </div>
     </main>

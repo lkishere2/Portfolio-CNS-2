@@ -126,7 +126,7 @@ export default function Introduction() {
           {/* Text Content */}
           <div className="text-center md:text-left flex-1">
             <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4 leading-tight">
-              Xin chào, em là{" "}
+              Em chào thầy cô, em là{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-pink-500 animate-pulse">
                   Phạm Thị Mai

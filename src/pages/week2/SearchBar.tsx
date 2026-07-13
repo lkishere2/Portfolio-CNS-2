@@ -15,7 +15,7 @@ export default function SearchBar() {
         clearInterval(interval);
         setIsTypingDone(true);
       }
-    }, 25); // 25ms per character * 50 chars ~= 1.25 seconds
+    }, 12); // Reduced by half for faster typing effect
 
     return () => clearInterval(interval);
   }, []);

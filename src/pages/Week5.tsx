@@ -2,6 +2,7 @@ import FileViewer from "../components/FileViewer";
 import GoalItem from "../components/GoalItem";
 import ContentShowcase from "./week5/ContentShowcase";
 import AIVisual from "./week5/AIVisual";
+import AIEthicsAndEval from "./week5/AIEthicsAndEval";
 import PageNav from "../components/PageNav";
 
 export default function Week5() {
@@ -36,53 +37,64 @@ export default function Week5() {
       </div>
 
       {/* Main Content Layout */}
-      <div className="flex flex-col lg:flex-row gap-10 items-start">
-        
-        {/* Left Column: Visual Component */}
-        <div className="w-full lg:w-1/3 flex justify-center lg:sticky lg:top-8 z-10 h-fit">
-          <AIVisual />
-        </div>
-
-        {/* Right Column: Content */}
-        <div className="w-full lg:w-2/3 flex flex-col gap-10 relative z-0">
+      <div className="flex flex-col gap-12 sm:gap-16">
+        {/* Row 1: Visual & File Viewer (Left) + Goals (Right) */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10">
           
-          {/* File Viewer (Báo cáo minh chứng) */}
-          <div className="opacity-0 animate-slide-in-right transform origin-left will-change-transform transform-gpu" style={{ animationDelay: '0.1s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="flex h-3 w-3 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
-              </span>
-              <h2 className="text-sm font-bold text-pink-700 uppercase tracking-widest px-1">
-                Báo cáo nộp bài
+          {/* Visual + File Viewer */}
+          <div className="opacity-0 animate-slide-in-right transform origin-left will-change-transform transform-gpu" style={{ animationDelay: '0.2s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+            <div className="bg-white p-6 rounded-2xl shadow-sm h-full flex flex-col justify-between">
+              
+              {/* AI Visual on top */}
+              <div className="mb-10 w-full flex justify-center">
+                <AIVisual />
+              </div>
+
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="flex h-3 w-3 relative">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
+                  </span>
+                  <h2 className="text-sm font-bold text-pink-700 uppercase tracking-widest px-1">
+                    Báo cáo nộp bài
+                  </h2>
+                </div>
+                <div className="scale-[1.02] transform-gpu transition-transform hover:scale-[1.03]">
+                  <FileViewer
+                    filename="week5.pdf"
+                    label="Báo cáo tuần 5 - Quy trình sáng tạo nội dung với AI"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Goals */}
+          <div className="opacity-0 animate-slide-in-right will-change-transform transform-gpu" style={{ animationDelay: '0.3s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-pink-50 h-full">
+              <h2 className="text-sm font-bold text-pink-700 uppercase tracking-wide border-b border-pink-100 pb-3 mb-4">
+                Mục tiêu cốt lõi
               </h2>
-            </div>
-            <div className="scale-[1.02] transform-gpu transition-transform hover:scale-[1.03]">
-              <FileViewer
-                filename="week5.pdf"
-                label="Báo cáo tuần 5 - Quy trình sáng tạo nội dung với AI"
-              />
-            </div>
-          </div>
-
-          {/* Goal Items */}
-          <div className="flex flex-col gap-3">
-            <h2 className="text-sm font-bold text-pink-700 uppercase tracking-wide border-b border-pink-100 pb-2 mb-2 opacity-0 animate-slide-in-right will-change-transform transform-gpu" style={{ animationDelay: '0.2s', animationDuration: '0.8s', animationFillMode: 'forwards' }}>
-              Mục tiêu cốt lõi
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {goals.map((goal, idx) => (
-                <GoalItem key={idx} text={goal} delay={`${0.3 + idx * 0.15}s`} />
-              ))}
+              <div className="flex flex-col gap-4">
+                {goals.map((goal, idx) => (
+                  <GoalItem key={idx} text={goal} delay={`${0.4 + idx * 0.15}s`} />
+                ))}
+              </div>
             </div>
           </div>
-
-          {/* Content Showcase */}
-          <div className="opacity-0 animate-slide-in-right will-change-transform transform-gpu" style={{ animationDelay: '0.4s', animationDuration: '1s', animationFillMode: 'forwards' }}>
-            <ContentShowcase />
-          </div>
-
         </div>
+
+        {/* Row 3: Content Showcase */}
+        <div className="opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '0.5s', animationDuration: '1s', animationFillMode: 'forwards' }}>
+          <ContentShowcase />
+        </div>
+
+        {/* Row 4: Ethics and Eval */}
+        <div className="opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '0.6s', animationDuration: '1s', animationFillMode: 'forwards' }}>
+          <AIEthicsAndEval />
+        </div>
+
       </div>
     </main>
   );

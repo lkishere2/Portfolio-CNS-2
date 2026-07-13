@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import { Eye, ShieldCheck, Lock, Scale, HeartHandshake, Lightbulb } from "lucide-react";
+import { Eye, ShieldCheck, Lock, Scale, Lightbulb, AlertTriangle, FileKey, HeartHandshake } from "lucide-react";
 
 export default function EthicsCard() {
   const principles = [
-    { title: "Minh bạch", desc: "Luôn công khai việc sử dụng AI trong các sản phẩm.", icon: Eye, color: "text-blue-500", bg: "bg-blue-50", border: "border-blue-100" },
-    { title: "Kiểm chứng", desc: "Kiểm tra chéo (fact-checking) với các nguồn đáng tin cậy.", icon: ShieldCheck, color: "text-emerald-500", bg: "bg-emerald-50", border: "border-emerald-100" },
-    { title: "Bảo mật", desc: "Không nhập dữ liệu cá nhân hay nhạy cảm vào các prompt.", icon: Lock, color: "text-rose-500", bg: "bg-rose-50", border: "border-rose-100" },
-    { title: "Bản quyền", desc: "Sử dụng AI có đạo đức, không sao chép nguyên xi tác phẩm người khác.", icon: Scale, color: "text-amber-500", bg: "bg-amber-50", border: "border-amber-100" },
-    { title: "Bao hàm", desc: "Tránh tạo ra nội dung chứa định kiến hoặc phân biệt đối xử.", icon: HeartHandshake, color: "text-purple-500", bg: "bg-purple-50", border: "border-purple-100" },
+    { title: "Quản lý Dấu chân số", desc: "Nhận thức rõ Dấu chân số (chủ động & bị động). Hạn chế chia sẻ thông tin cá nhân công khai để bảo vệ danh tính số.", icon: Eye, color: "text-blue-500", bg: "bg-blue-50", border: "border-blue-100" },
+    { title: "Cảnh giác Phishing & QR Code", desc: "Tuyệt đối không quét QR Code lạ dán bừa bãi hoặc click link đáng ngờ giả mạo ngân hàng/trường học.", icon: ShieldCheck, color: "text-emerald-500", bg: "bg-emerald-50", border: "border-emerald-100" },
+    { title: "Phòng ngừa Malware & Ransomware", desc: "Thường xuyên sao lưu dữ liệu, không tải phần mềm lậu (crack) để tránh bị mã hóa dữ liệu tống tiền.", icon: Lock, color: "text-rose-500", bg: "bg-rose-50", border: "border-rose-100" },
+    { title: "Đối phó AI-Threats & Deepfake", desc: "Cảnh giác cao độ với email lừa đảo hoàn hảo hoặc video/giọng nói giả mạo được tạo bởi Trí tuệ Nhân tạo.", icon: AlertTriangle, color: "text-amber-500", bg: "bg-amber-50", border: "border-amber-100" },
+    { title: "Bảo mật Dữ liệu Prompt", desc: "Không bao giờ nhập thông tin cá nhân, dữ liệu nội bộ nhạy cảm vào các công cụ AI công cộng (ChatGPT, Gemini).", icon: FileKey, color: "text-purple-500", bg: "bg-purple-50", border: "border-purple-100" },
+    { title: "Tuân thủ Liêm chính học thuật", desc: "Phòng chống Đạo văn (Plagiarism). Luôn trích dẫn nguồn rõ ràng kể cả khi diễn giải lại (Paraphrase) ý tưởng của người khác.", icon: Scale, color: "text-indigo-500", bg: "bg-indigo-50", border: "border-indigo-100" },
+    { title: "Sử dụng AI minh bạch & Đạo đức", desc: "Dùng AI như một trợ lý để học hỏi, không dùng để gian lận hay thi hộ. Luôn kiểm chứng chéo (Fact-check) mọi thông tin AI cung cấp.", icon: HeartHandshake, color: "text-pink-500", bg: "bg-pink-50", border: "border-pink-100" },
   ];
 
   const containerVariants: Variants = {
@@ -34,7 +36,7 @@ export default function EthicsCard() {
           <motion.div 
             key={idx} 
             variants={itemVariants}
-            className={`p-5 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all group ${idx === 4 ? "sm:col-span-2 md:col-span-1" : ""}`}
+            className={`p-5 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all group ${idx === 6 ? "sm:col-span-2" : ""}`}
           >
             <div className="flex items-center gap-4 mb-3">
               <div className={`w-12 h-12 rounded-xl ${p.bg} ${p.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
@@ -54,21 +56,21 @@ export default function EthicsCard() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.5, duration: 0.5 }}
-        className="relative overflow-hidden rounded-3xl bg-gray-900 p-8 shadow-xl mt-auto"
+        className="relative overflow-hidden rounded-3xl bg-emerald-50 border border-emerald-100 p-8 shadow-sm mt-auto"
       >
-        <div className="hidden md:block absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-pink-500/20 to-rose-500/20 blur-3xl transform translate-x-1/3 -translate-y-1/3" />
-        <div className="hidden md:block absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 blur-3xl transform -translate-x-1/3 translate-y-1/3" />
+        <div className="hidden md:block absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-emerald-200/40 to-teal-200/40 blur-3xl transform translate-x-1/3 -translate-y-1/3" />
+        <div className="hidden md:block absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-emerald-300/20 to-teal-300/20 blur-3xl transform -translate-x-1/3 translate-y-1/3" />
         
         <div className="relative z-10 flex flex-col sm:flex-row items-start gap-6">
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center shrink-0 shadow-lg">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shrink-0 shadow-lg">
             <Lightbulb className="w-7 h-7 text-white" />
           </div>
           <div>
-            <h4 className="text-xl font-bold text-white mb-3">
-              Giải pháp cho thách thức đạo đức
+            <h4 className="text-xl font-bold text-emerald-900 mb-3">
+              Giải pháp An ninh mạng & Đạo đức số
             </h4>
-            <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-              Khi đối mặt với rủi ro như <strong>Deepfake</strong> hay <strong>thiên kiến dữ liệu</strong>, tư duy phản biện (Critical Thinking) là vũ khí quan trọng nhất. Cần có cơ chế <span className="text-pink-400 font-semibold">"Human-in-the-loop"</span> — con người luôn là người ra quyết định cuối cùng, kiểm duyệt đầu ra của AI trước khi công bố.
+            <p className="text-emerald-800/80 leading-relaxed text-sm sm:text-base">
+              Khi đối mặt với các nguy cơ mới như <strong>AI-powered Phishing</strong> (Email lừa đảo do AI viết) hay rủi ro lộ <strong>Dấu chân số</strong>, tư duy phản biện (Critical Thinking) là vũ khí quan trọng nhất. Cần có cơ chế <span className="text-emerald-600 font-bold">"Human-in-the-loop"</span> — con người luôn là người kiểm duyệt thông tin cuối cùng. Tuân thủ <strong>Sử dụng hợp lý (Fair Use)</strong> và <strong>Giấy phép mở (Creative Commons)</strong> để đảm bảo liêm chính học thuật và tôn trọng bản quyền.
             </p>
           </div>
         </div>

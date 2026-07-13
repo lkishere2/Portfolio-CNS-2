@@ -32,7 +32,7 @@ export default function CollaborationVisual() {
         <motion.div 
           animate={{ scale: [1, 1.05, 1] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="w-20 h-20 sm:w-32 sm:h-32 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center relative shadow-xl"
+          className="w-20 h-20 sm:w-32 sm:h-32 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center relative shadow-xl"
         >
           <Database className="w-10 h-10 sm:w-16 sm:h-16 text-white" />
         </motion.div>
@@ -40,46 +40,88 @@ export default function CollaborationVisual() {
 
       {/* Nodes */}
       {/* Node 1: Top Left (25%, 20%) */}
-      <div className="absolute top-[20%] left-[25%] -translate-x-1/2 -translate-y-1/2 z-10">
+      <motion.div 
+        className="absolute z-10"
+        style={{ x: "-50%", y: "-50%" }}
+        initial={{ top: "50%", left: "50%", opacity: 0, scale: 0.5 }}
+        whileInView={{ top: "20%", left: "25%", opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.3 }}
+      >
         <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} className="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-pink-50 border-2 border-pink-200 flex items-center justify-center text-pink-500 shadow-lg will-change-transform transform-gpu">
           <Users className="w-5 h-5 sm:w-7 sm:h-7" />
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Node 2: Top Right (75%, 20%) */}
-      <div className="absolute top-[20%] left-[75%] -translate-x-1/2 -translate-y-1/2 z-10">
+      <motion.div 
+        className="absolute z-10"
+        style={{ x: "-50%", y: "-50%" }}
+        initial={{ top: "50%", left: "50%", opacity: 0, scale: 0.5 }}
+        whileInView={{ top: "20%", left: "75%", opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.4 }}
+      >
         <motion.div animate={{ y: [5, -5, 5] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} className="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-blue-500 shadow-lg will-change-transform transform-gpu">
           <MessageSquare className="w-5 h-5 sm:w-7 sm:h-7" />
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Node 3: Center Left (18.75%, 50%) */}
-      <div className="absolute top-[50%] left-[18.75%] -translate-x-1/2 -translate-y-1/2 z-10">
+      <motion.div 
+        className="absolute z-10"
+        style={{ x: "-50%", y: "-50%" }}
+        initial={{ top: "50%", left: "50%", opacity: 0, scale: 0.5 }}
+        whileInView={{ top: "50%", left: "18.75%", opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.5 }}
+      >
         <motion.div animate={{ x: [-5, 5, -5] }} transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 0.2 }} className="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-emerald-50 border-2 border-emerald-200 flex items-center justify-center text-emerald-500 shadow-lg will-change-transform transform-gpu">
           <Monitor className="w-5 h-5 sm:w-7 sm:h-7" />
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Node 4: Center Right (81.25%, 50%) */}
-      <div className="absolute top-[50%] left-[81.25%] -translate-x-1/2 -translate-y-1/2 z-10">
+      <motion.div 
+        className="absolute z-10"
+        style={{ x: "-50%", y: "-50%" }}
+        initial={{ top: "50%", left: "50%", opacity: 0, scale: 0.5 }}
+        whileInView={{ top: "50%", left: "81.25%", opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.6 }}
+      >
         <motion.div animate={{ x: [5, -5, 5] }} transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 0.7 }} className="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-purple-50 border-2 border-purple-200 flex items-center justify-center text-purple-500 shadow-lg will-change-transform transform-gpu">
           <Cloud className="w-5 h-5 sm:w-7 sm:h-7" />
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Node 5: Bottom Left (31.25%, 80%) */}
-      <div className="absolute top-[80%] left-[31.25%] -translate-x-1/2 -translate-y-1/2 z-10">
+      <motion.div 
+        className="absolute z-10"
+        style={{ x: "-50%", y: "-50%" }}
+        initial={{ top: "50%", left: "50%", opacity: 0, scale: 0.5 }}
+        whileInView={{ top: "80%", left: "31.25%", opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.7 }}
+      >
         <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut", delay: 1 }} className="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-amber-50 border-2 border-amber-200 flex items-center justify-center text-amber-500 shadow-lg will-change-transform transform-gpu">
           <CheckCircle className="w-5 h-5 sm:w-7 sm:h-7" />
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Node 6: Bottom Right (68.75%, 80%) */}
-      <div className="absolute top-[80%] left-[68.75%] -translate-x-1/2 -translate-y-1/2 z-10">
+      <motion.div 
+        className="absolute z-10"
+        style={{ x: "-50%", y: "-50%" }}
+        initial={{ top: "50%", left: "50%", opacity: 0, scale: 0.5 }}
+        whileInView={{ top: "80%", left: "68.75%", opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.8 }}
+      >
         <motion.div animate={{ y: [5, -5, 5] }} transition={{ duration: 3.1, repeat: Infinity, ease: "easeInOut", delay: 0.4 }} className="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-cyan-50 border-2 border-cyan-200 flex items-center justify-center text-cyan-500 shadow-lg will-change-transform transform-gpu">
           <Smartphone className="w-5 h-5 sm:w-7 sm:h-7" />
         </motion.div>
-      </div>
+      </motion.div>
 
     </div>
   );

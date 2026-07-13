@@ -76,3 +76,42 @@ html, body {
 .animate-sway {
   animation: sway 3s ease-in-out infinite;
 }
+
+@keyframes cube-spin {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.animate-cube-spin {
+  animation: cube-spin 8s linear infinite;
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.animate-orbit-spin {
+  animation: orbit-spin var(--orbit-duration, 20s) linear infinite;
+}
+
+@keyframes orbit-spin-reverse {
+  from {
+    transform: rotateZ(360deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+.animate-orbit-spin-reverse {
+  animation: orbit-spin-reverse var(--orbit-duration, 20s) linear infinite;
+}

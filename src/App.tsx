@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import VerticalNav from "./components/VerticalNav";
+import CustomCursor from "./components/CustomCursor";
+
 import HomePage from "./pages/home/HomePage";
 import Week1 from "./pages/Week1";
 import Week2 from "./pages/Week2";
@@ -11,6 +13,7 @@ import Week4 from "./pages/Week4";
 import Week5 from "./pages/Week5";
 import Week6 from "./pages/Week6";
 import Summary from "./pages/Summary";
+import SecretPage from "./pages/secret/SecretPage";
 
 function ScrollHandler() {
   const { pathname, hash } = useLocation();
@@ -32,13 +35,17 @@ function ScrollHandler() {
   return null;
 }
 
-export default function App() {
+function AppContent() {
+  const location = useLocation();
+  const isSecretPage = location.pathname === "/secret";
+
   return (
-    <BrowserRouter>
+    <>
       <ScrollHandler />
+      <CustomCursor />
       <div className="min-h-screen flex flex-col bg-white overflow-x-hidden w-full">
-        <Header />
-        <VerticalNav />
+        {!isSecretPage && <Header />}
+        {!isSecretPage && <VerticalNav />}
         <div className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -49,10 +56,19 @@ export default function App() {
             <Route path="/week5" element={<Week5 />} />
             <Route path="/week6" element={<Week6 />} />
             <Route path="/summary" element={<Summary />} />
+            <Route path="/secret" element={<SecretPage />} />
           </Routes>
         </div>
-        <Footer />
+        {!isSecretPage && <Footer />}
       </div>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }

@@ -26,7 +26,7 @@ export default function AboutMe() {
               About Me
             </h2>
             <p className="text-gray-600 leading-relaxed text-lg mb-8">
-              Xin chào! Em là Phạm Thị Mai, sinh viên trường Đại học Ngoại ngữ - Đại học Quốc gia Hà Nội (ULIS).
+              Em chào thầy cô! Em là Phạm Thị Mai, sinh viên trường Đại học Ngoại ngữ - Đại học Quốc gia Hà Nội (ULIS).
               Đây là không gian lưu trữ quá trình học tập và phát triển kỹ năng số của em trong suốt hành trình môn học 
               <span className="font-semibold text-gray-800"> Nhập môn Công nghệ số và Trí tuệ nhân tạo</span>.
               Em đam mê khám phá cách công nghệ có thể hỗ trợ và nâng cao hiệu quả học tập cũng như làm việc.

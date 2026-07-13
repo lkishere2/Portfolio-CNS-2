@@ -26,8 +26,15 @@ export default function AIVisual() {
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         className="absolute w-52 h-52 border-2 border-pink-100 rounded-full border-dashed z-10 will-change-transform transform-gpu"
       >
-        {/* Target (Top) - Appears at 0s */}
-        <div className="absolute -top-7 left-1/2 -translate-x-1/2">
+        {/* Target (Top) */}
+        <motion.div 
+          className="absolute z-10"
+          style={{ x: "-50%", y: "-50%" }}
+          initial={{ top: "50%", left: "50%", opacity: 0, scale: 0.5 }}
+          whileInView={{ top: "0%", left: "50%", opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.3 }}
+        >
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -35,10 +42,17 @@ export default function AIVisual() {
           >
             <Target className="w-6 h-6" />
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Text AI (Right) */}
-        <div className="absolute top-1/2 -translate-y-1/2 -right-7">
+        <motion.div 
+          className="absolute z-10"
+          style={{ x: "-50%", y: "-50%" }}
+          initial={{ top: "50%", left: "50%", opacity: 0, scale: 0.5 }}
+          whileInView={{ top: "50%", left: "100%", opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.5 }}
+        >
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -46,10 +60,17 @@ export default function AIVisual() {
           >
             <Type className="w-6 h-6" />
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Image AI (Bottom) */}
-        <div className="absolute -bottom-7 left-1/2 -translate-x-1/2">
+        <motion.div 
+          className="absolute z-10"
+          style={{ x: "-50%", y: "-50%" }}
+          initial={{ top: "50%", left: "50%", opacity: 0, scale: 0.5 }}
+          whileInView={{ top: "100%", left: "50%", opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.7 }}
+        >
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -57,10 +78,17 @@ export default function AIVisual() {
           >
             <Image className="w-6 h-6" />
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Design AI (Left) */}
-        <div className="absolute top-1/2 -translate-y-1/2 -left-7">
+        <motion.div 
+          className="absolute z-10"
+          style={{ x: "-50%", y: "-50%" }}
+          initial={{ top: "50%", left: "50%", opacity: 0, scale: 0.5 }}
+          whileInView={{ top: "50%", left: "0%", opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.9 }}
+        >
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -68,7 +96,7 @@ export default function AIVisual() {
           >
             <Palette className="w-6 h-6" />
           </motion.div>
-        </div>
+        </motion.div>
       </motion.div>
       
     </div>

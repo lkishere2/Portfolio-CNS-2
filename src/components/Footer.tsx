@@ -20,11 +20,11 @@ export default function Footer() {
               </span>
               <span className="text-pink-200">|</span>
               <span className="text-gray-600 text-sm">
-                <strong className="text-pink-800">Ngành:</strong> Ngôn ngữ và văn hóa Anh
+                <strong className="text-pink-800">Khoa:</strong> Ngôn ngữ và văn hóa Anh
               </span>
               <span className="text-pink-200">|</span>
               <span className="text-gray-600 text-sm">
-                <strong className="text-pink-800">Khóa:</strong> 2026
+                <strong className="text-pink-800">Khóa:</strong> QH2025
               </span>
             </div>
           </div>
