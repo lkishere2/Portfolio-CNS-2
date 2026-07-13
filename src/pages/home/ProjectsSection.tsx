@@ -105,11 +105,8 @@ export default function ProjectsSection() {
             Hành trình · 6 Kỹ năng số
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 leading-tight">
-            Bước 2: Hệ thống hóa và trình bày các kết quả bài tập thành phần
+            Hệ thống hóa và trình bày kết quả bài tập
           </h2>
-          <p className="text-gray-500 text-sm md:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
-            Thay vì chỉ thực hiện mới, sinh viên tập trung vào việc biên tập và trình bày lại kết quả của các bài tập nhỏ từ Bài 1 đến Bài 6 vào các trang tương ứng trên Portfolio. Mục tiêu là làm nổi bật sản phẩm cuối cùng và quy trình thực hiện của từng kỹ năng:
-          </p>
         </div>
 
         {/* Timeline */}

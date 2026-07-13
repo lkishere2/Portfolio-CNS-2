@@ -9,8 +9,8 @@ export default function SourceEvaluation() {
       pros: "Khung lý thuyết hệ thống, >10.000 trích dẫn",
       cons: "Chưa cập nhật ví dụ AI mới nhất",
       color: "from-blue-500 to-indigo-500",
-      bg: "bg-blue-50",
-      border: "border-blue-100"
+      bg: "bg-white",
+      border: "border-gray-200"
     },
     {
       title: "Neural Machine Translation Quality",
@@ -19,8 +19,8 @@ export default function SourceEvaluation() {
       pros: "Nghiên cứu định lượng, đo lường BLEU score",
       cons: "Nặng về kỹ thuật, ít tính văn hóa",
       color: "from-blue-500 to-indigo-500",
-      bg: "bg-blue-50",
-      border: "border-blue-100"
+      bg: "bg-white",
+      border: "border-gray-200"
     },
     {
       title: "Standard for Translation Services",
@@ -29,8 +29,8 @@ export default function SourceEvaluation() {
       pros: "Luật chơi chung, tính ứng dụng thực tế cao",
       cons: "Khô khan, thiếu tính linh hoạt",
       color: "from-blue-500 to-indigo-500",
-      bg: "bg-blue-50",
-      border: "border-blue-100"
+      bg: "bg-white",
+      border: "border-gray-200"
     }
   ];
 
@@ -62,13 +62,13 @@ export default function SourceEvaluation() {
             <div className="text-sm text-gray-500 font-medium mb-3">Tác giả: {source.author}</div>
             
             <div className="grid grid-cols-2 gap-3 text-sm">
-              <div className="bg-white/60 p-2 rounded border border-white/40">
+              <div className="bg-gray-50 p-2 rounded border border-gray-100">
                 <div className="font-bold text-emerald-600 mb-1 flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" /> Ưu điểm
                 </div>
                 <div className="text-gray-600 leading-tight">{source.pros}</div>
               </div>
-              <div className="bg-white/60 p-2 rounded border border-white/40">
+              <div className="bg-gray-50 p-2 rounded border border-gray-100">
                 <div className="font-bold text-rose-600 mb-1 flex items-center gap-1">
                   <AlertTriangle className="w-3.5 h-3.5" /> Nhược điểm
                 </div>

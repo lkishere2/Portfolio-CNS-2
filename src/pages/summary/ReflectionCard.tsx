@@ -1,4 +1,5 @@
 import { Search, MessageSquare, Handshake, ShieldCheck, Mountain, Rocket, BookOpen } from "lucide-react";
+import { motion } from "framer-motion";
 import LightbulbCircuit from "./LightbulbCircuit";
 
 export default function ReflectionCard() {
@@ -19,7 +20,13 @@ export default function ReflectionCard() {
           <LightbulbCircuit />
           
           {/* Skill 1 */}
-          <div className="p-5 rounded-xl bg-red-500 hover:bg-red-600 shadow-sm hover:shadow-md transition-all duration-300 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", bounce: 0.4, duration: 0.8, delay: 0.1 }}
+            className="p-5 rounded-xl bg-red-500 hover:bg-red-600 shadow-sm hover:shadow-md transition-all duration-300 relative z-10"
+          >
             <h4 className="font-bold text-white mb-3 flex items-center gap-3 text-sm">
               <div className="p-1.5 bg-white/20 text-white rounded-md">
                 <Search className="w-4 h-4" />
@@ -27,9 +34,15 @@ export default function ReflectionCard() {
               Kỹ năng Nghiên cứu
             </h4>
             <p className="text-sm text-white/90 leading-relaxed">Sử dụng toán tử tìm kiếm nâng cao để định vị nguồn học thuật đáng tin cậy nhanh chóng và chính xác.</p>
-          </div>
+          </motion.div>
           {/* Skill 2 */}
-          <div className="p-5 rounded-xl bg-green-500 hover:bg-green-600 shadow-sm hover:shadow-md transition-all duration-300 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", bounce: 0.4, duration: 0.8, delay: 0.2 }}
+            className="p-5 rounded-xl bg-green-500 hover:bg-green-600 shadow-sm hover:shadow-md transition-all duration-300 relative z-10"
+          >
             <h4 className="font-bold text-white mb-3 flex items-center gap-3 text-sm">
               <div className="p-1.5 bg-white/20 text-white rounded-md">
                 <MessageSquare className="w-4 h-4" />
@@ -37,9 +50,15 @@ export default function ReflectionCard() {
               Prompt Engineering
             </h4>
             <p className="text-sm text-white/90 leading-relaxed">Làm chủ nghệ thuật giao tiếp với AI thông qua các framework như CREATE, thiết lập ngữ cảnh và vai trò.</p>
-          </div>
+          </motion.div>
           {/* Skill 3 */}
-          <div className="p-5 rounded-xl bg-blue-500 hover:bg-blue-600 shadow-sm hover:shadow-md transition-all duration-300 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", bounce: 0.4, duration: 0.8, delay: 0.3 }}
+            className="p-5 rounded-xl bg-blue-500 hover:bg-blue-600 shadow-sm hover:shadow-md transition-all duration-300 relative z-10"
+          >
             <h4 className="font-bold text-white mb-3 flex items-center gap-3 text-sm">
               <div className="p-1.5 bg-white/20 text-white rounded-md">
                 <Handshake className="w-4 h-4" />
@@ -47,9 +66,15 @@ export default function ReflectionCard() {
               Hợp tác & Quản lý
             </h4>
             <p className="text-sm text-white/90 leading-relaxed">Biết cách tích hợp công cụ số (Notion, Trello) để quản lý dự án nhóm hiệu quả trong môi trường làm việc từ xa.</p>
-          </div>
+          </motion.div>
           {/* Skill 4 */}
-          <div className="p-5 rounded-xl bg-yellow-500 hover:bg-yellow-600 shadow-sm hover:shadow-md transition-all duration-300 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", bounce: 0.4, duration: 0.8, delay: 0.4 }}
+            className="p-5 rounded-xl bg-yellow-500 hover:bg-yellow-600 shadow-sm hover:shadow-md transition-all duration-300 relative z-10"
+          >
             <h4 className="font-bold text-white mb-3 flex items-center gap-3 text-sm">
               <div className="p-1.5 bg-white/20 text-white rounded-md">
                 <ShieldCheck className="w-4 h-4" />
@@ -57,14 +82,20 @@ export default function ReflectionCard() {
               Đạo đức AI
             </h4>
             <p className="text-sm text-white/90 leading-relaxed">Xây dựng ý thức về sự minh bạch, bản quyền và tác động xã hội khi ứng dụng các công cụ Generative AI.</p>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Two Columns: Challenges & Future */}
       <div className="grid md:grid-cols-2 gap-8">
         {/* Challenges */}
-        <div className="bg-gradient-to-br from-white to-pink-50 border border-pink-100 rounded-2xl p-8 shadow-sm flex flex-col h-full">
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+          className="bg-gradient-to-br from-white to-pink-50 border border-pink-100 rounded-2xl p-8 shadow-sm flex flex-col h-full"
+        >
           <h4 className="font-bold text-pink-900 mb-4 flex items-center gap-2 text-base uppercase tracking-wide border-b border-pink-100 pb-3">
             <Mountain className="w-5 h-5 text-pink-500" />
             Thách thức & Vượt qua
@@ -77,10 +108,16 @@ export default function ReflectionCard() {
               "AI là một người trợ lý nghiên cứu đắc lực, nhưng tư duy phản biện của con người mới là yếu tố quyết định tính đúng đắn."
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Future Application */}
-        <div className="bg-gradient-to-br from-white to-pink-50 border border-pink-100 rounded-2xl p-8 shadow-sm flex flex-col h-full">
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+          className="bg-gradient-to-br from-white to-pink-50 border border-pink-100 rounded-2xl p-8 shadow-sm flex flex-col h-full"
+        >
           <h4 className="font-bold text-pink-900 mb-4 flex items-center gap-2 text-base uppercase tracking-wide border-b border-pink-100 pb-3">
             <Rocket className="w-5 h-5 text-pink-500" />
             Định hướng & Ứng dụng
@@ -93,7 +130,7 @@ export default function ReflectionCard() {
             <li className="pl-1">Ứng dụng các công cụ No-code để tối ưu hóa quy trình làm việc cá nhân.</li>
             <li className="pl-1">Luôn tuân thủ nguyên tắc sử dụng AI minh bạch, trích dẫn rõ ràng và có trách nhiệm.</li>
           </ul>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
