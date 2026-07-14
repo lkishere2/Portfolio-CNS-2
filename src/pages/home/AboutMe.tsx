@@ -18,7 +18,13 @@ export default function AboutMe() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
           
           {/* Cột trái: Giới thiệu và Kỹ năng */}
-          <div className="text-left flex flex-col justify-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            className="text-left flex flex-col justify-center"
+          >
             <p className="text-sm font-medium text-pink-400 uppercase tracking-widest mb-2">
               Về bản thân
             </p>
@@ -46,24 +52,40 @@ export default function AboutMe() {
                 </motion.span>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Cột phải: Các mục tiêu */}
           <div className="grid grid-rows-2 gap-6 relative h-full">
             {/* Background trang trí nhỏ phía sau cards */}
             <div className="hidden md:block absolute -top-10 -right-10 w-64 h-64 bg-pink-100 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
-            <ObjectiveCard
-              icon={<Target className="w-6 h-6" />}
-              title="Mục tiêu học tập"
-              description="Hiểu và ứng dụng được các công nghệ số cơ bản, từ quản lý tệp tin đến khai thác AI tạo sinh trong học tập và nghiên cứu ngôn ngữ."
-            />
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.1 }}
+              className="h-full"
+            >
+              <ObjectiveCard
+                icon={<Target className="w-6 h-6" />}
+                title="Mục tiêu học tập"
+                description="Hiểu và ứng dụng được các công nghệ số cơ bản, từ quản lý tệp tin đến khai thác AI tạo sinh trong học tập và nghiên cứu ngôn ngữ."
+              />
+            </motion.div>
 
-            <ObjectiveCard
-              icon={<FolderOpen className="w-6 h-6" />}
-              title="Mục tiêu Portfolio"
-              description="Lưu trữ và trình bày các sản phẩm học tập một cách có hệ thống, thể hiện sự phát triển kỹ năng số qua từng tuần học."
-            />
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.3 }}
+              className="h-full"
+            >
+              <ObjectiveCard
+                icon={<FolderOpen className="w-6 h-6" />}
+                title="Mục tiêu Portfolio"
+                description="Lưu trữ và trình bày các sản phẩm học tập một cách có hệ thống, thể hiện sự phát triển kỹ năng số qua từng tuần học."
+              />
+            </motion.div>
           </div>
 
         </div>

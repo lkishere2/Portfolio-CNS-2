@@ -46,33 +46,38 @@ export default function SourceEvaluation() {
         </div>
       </div>
 
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {sources.map((source, idx) => (
-          <div key={idx} className={`relative overflow-hidden border ${source.border} ${source.bg} rounded-xl p-4 transition-transform hover:-translate-y-1 hover:shadow-md group`}>
+          <div key={idx} className={`relative overflow-hidden border ${source.border} ${source.bg} rounded-xl p-5 transition-transform hover:-translate-y-1 hover:shadow-md group flex flex-col justify-between h-full`}>
             {/* Top accent bar */}
             <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${source.color}`}></div>
             
-            <div className="flex justify-between items-start mb-2 mt-1">
-              <h3 className="font-bold text-gray-800 text-base">{source.title}</h3>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500 bg-white px-2 py-0.5 rounded shadow-sm border border-gray-100">
-                {source.type}
-              </span>
+            <div className="flex-1 flex flex-col mb-4">
+              <div className="mb-2 mt-1">
+                <span className="text-[9px] font-bold uppercase tracking-wider text-pink-600 bg-pink-50/50 px-2 py-0.5 rounded border border-pink-100">
+                  {source.type}
+                </span>
+              </div>
+              
+              <h3 className="font-bold text-gray-800 text-base leading-snug mb-1 group-hover:text-pink-600 transition-colors">
+                {source.title}
+              </h3>
+              
+              <div className="text-xs text-gray-400 font-medium">Tác giả: {source.author}</div>
             </div>
             
-            <div className="text-sm text-gray-500 font-medium mb-3">Tác giả: {source.author}</div>
-            
-            <div className="grid grid-cols-2 gap-3 text-sm">
-              <div className="bg-gray-50 p-2 rounded border border-gray-100">
-                <div className="font-bold text-emerald-600 mb-1 flex items-center gap-1">
+            <div className="space-y-2.5 text-xs">
+              <div className="bg-gray-50/50 p-3 rounded-lg border border-gray-100">
+                <div className="font-bold text-emerald-600 mb-1 flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5" /> Ưu điểm
                 </div>
-                <div className="text-gray-600 leading-tight">{source.pros}</div>
+                <div className="text-gray-600 leading-normal">{source.pros}</div>
               </div>
-              <div className="bg-gray-50 p-2 rounded border border-gray-100">
-                <div className="font-bold text-rose-600 mb-1 flex items-center gap-1">
+              <div className="bg-gray-50/50 p-3 rounded-lg border border-gray-100">
+                <div className="font-bold text-rose-600 mb-1 flex items-center gap-1.5">
                   <AlertTriangle className="w-3.5 h-3.5" /> Nhược điểm
                 </div>
-                <div className="text-gray-600 leading-tight">{source.cons}</div>
+                <div className="text-gray-600 leading-normal">{source.cons}</div>
               </div>
             </div>
           </div>

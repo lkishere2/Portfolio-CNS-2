@@ -19,6 +19,12 @@ function ScrollHandler() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    if (pathname !== "/") {
+      sessionStorage.removeItem("introPlayed");
+    }
+  }, [pathname]);
+
+  useEffect(() => {
     if (hash) {
       setTimeout(() => {
         const id = hash.replace("#", "");

@@ -80,12 +80,12 @@ export default function Week1() {
             </div>
           </div>
 
-          {/* Core Basic Tasks List */}
-          <div className="opacity-0 animate-slide-in-right will-change-transform transform-gpu" style={{ animationDelay: '0.8s', animationDuration: '1s', animationFillMode: 'forwards' }}>
-            <BasicTasks />
-          </div>
-
         </div>
+      </div>
+
+      {/* Core Basic Tasks List (3x4 Grid - Full Width) */}
+      <div className="opacity-0 animate-fade-in-up will-change-transform transform-gpu" style={{ animationDelay: '0.8s', animationDuration: '1s', animationFillMode: 'forwards' }}>
+        <BasicTasks />
       </div>
 
       {/* Full-width Section: Concepts & Shortcuts */}

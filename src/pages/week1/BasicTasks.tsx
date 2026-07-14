@@ -28,7 +28,7 @@ export default function BasicTasks() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {steps.map((step, idx) => (
           <div key={idx} className="flex gap-4 p-3 hover:bg-pink-50/50 rounded-lg transition-colors border border-transparent hover:border-pink-100 group">
             <div className="flex-shrink-0 w-8 h-8 rounded-full bg-pink-100 text-pink-600 font-bold flex items-center justify-center text-sm shadow-sm group-hover:scale-110 transition-transform">

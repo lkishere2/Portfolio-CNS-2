@@ -1,9 +1,11 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Lightbulb } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export default function LightbulbCircuit() {
   const navigate = useNavigate();
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleBulbClick = () => {
     // Navigate only if screen is large enough (laptop)
@@ -14,6 +16,24 @@ export default function LightbulbCircuit() {
 
   return (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden lg:flex items-center justify-center scale-75 lg:scale-90">
+      {/* Tooltip Hint */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.9 }}
+            animate={{ opacity: 1, y: -80, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.9 }}
+            transition={{ duration: 0.2 }}
+            className="absolute left-1/2 -translate-x-1/2 bg-white border border-pink-200 text-pink-600 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md whitespace-nowrap z-50 pointer-events-none"
+          >
+            <span>Click me!</span>
+            {/* Tooltip arrow */}
+            <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-pink-200" />
+            <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-4 border-transparent border-t-white" />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Background glow */}
       <div className="absolute inset-0 bg-pink-100 rounded-full blur-xl opacity-70 w-32 h-32 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 pointer-events-none" />
       
@@ -30,7 +50,7 @@ export default function LightbulbCircuit() {
         <circle cx="120" cy="40" r="3" fill="#ec4899" />
         <circle cx="40" cy="120" r="3" fill="#ec4899" />
       </svg>
-
+ 
       {/* Center Bulb Container */}
       <motion.div 
         animate={{ scale: [1, 1.1, 1] }} 
@@ -38,6 +58,8 @@ export default function LightbulbCircuit() {
         className="relative z-10"
       >
         <motion.div
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
           whileHover={{ scale: 1.1, boxShadow: "0 0 25px rgba(236,72,153,0.6)" }}
           whileTap={{ scale: 0.9, rotate: -15 }}
           onClick={handleBulbClick}

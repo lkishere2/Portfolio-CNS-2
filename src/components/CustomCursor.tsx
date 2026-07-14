@@ -11,6 +11,7 @@ export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [ripples, setRipples] = useState<Ripple[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -22,6 +23,20 @@ export default function CustomCursor() {
   const springConfig = { damping: 25, stiffness: 400, mass: 0.5 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
+
+  useEffect(() => {
+    const checkModal = () => {
+      const hasIframe = !!document.querySelector("iframe");
+      setIsModalOpen(hasIframe);
+    };
+
+    checkModal();
+
+    const observer = new MutationObserver(checkModal);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     // Do not show on touch devices
@@ -79,7 +94,7 @@ export default function CustomCursor() {
     };
   }, [cursorX, cursorY, isVisible]);
 
-  if (!isVisible) return null;
+  if (!isVisible || isModalOpen) return null;
 
   return (
     <>
